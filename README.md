@@ -1,42 +1,124 @@
-# Versión: 1.8
+<div align="center">
 
-**· Script hecho más por meramente aburrimiento.**
+# Check Subdomains
 
-**· En desarrollo.**
+**Herramienta para escanear subdominios hecha en python.**
 
-instalación
-```
-git clone https://github.com/vixho69/Check-subdomains
+</div>
+
+---
+
+## Características
+
+- Interfaz interactiva (usa `input()`)
+- Wordlist desde `sub.txt` (se crea automáticamente si no existe)
+- Escaneo concurrente (40 hilos por defecto)
+- Timeouts configurados
+- Resolución de IP + detección de HTTP/HTTPS
+- Detección de Cloudflare, Server header y Status Code
+- Barra de progreso en tiempo real
+- Guardado automático de resultados en `vivos.txt`
+- Código limpio, robusto y mantenible
+- Validación y limpieza del dominio ingresado
+
+---
+
+## Requisitos
+
+- Python 3.8+
+- `requests`
+- `colorama`
+
+---
+
+## Instalación
+
+```bash
+git clone https://github.com/VicenteRC-Dev/Check-subdomains
+cd Check-subdomains
 pip install -r requirements.txt
 ```
-Ejecución
-```
+
+---
+
+## Uso
+
+```bash
 python3 Check.py
 ```
-# importante
-**Agregar más contenido dentro del archivo "sub.txt" para que hacer las revisiones y todo el contenido con salto de línea para lograr obtener los datos y que los subdominios no contengan salto de lineas (de mas)**
 
-# English repo:
+El programa te pedirá el dominio:
 
-**· Script made more out of boredom.**
-
-**· Developing.**
-
-Installation
 ```
-git clone https://github.com/vixho69/Check-subdomains
-pip install -r requirements.txt
-```
-Execution
-```
-python3 check.py
+Ingresa el dominio a escanear (ejemplo: google.com)
+>> ejemplo.com
 ```
 
-# important
-**Add more content inside the "sub.txt" file so that revisions and all content with line breaks are done to get the data and that subdomains do not contain line breaks (more)**
+---
 
-# Ejemplo/Example
+## Archivos
 
-![XD](https://github.com/vixho69/Check-subdomains/assets/133933012/323af103-ec5e-456b-bdef-f4b2c7dda1a2)
+| Archivo            | Descripción                                      |
+|--------------------|--------------------------------------------------|
+| `Check.py`         | Script principal                                 |
+| `sub.txt`          | Wordlist de subdominios (uno por línea)          |
+| `requirements.txt` | Dependencias                                     |
+| `vivos.txt`        | Se genera automáticamente con los resultados     |
+| `README.md`        | Este archivo                                     |
 
-# discord: little.kid
+---
+
+## Personalizar la wordlist
+
+Edita el archivo `sub.txt` y agrega o quita subdominios (uno por línea).
+
+Las líneas que empiezan con `#` se ignoran.
+
+```
+www
+mail
+api
+admin
+dev
+staging
+# esto es un comentario
+cdn
+```
+
+---
+
+## Ejemplo de salida
+
+Los resultados son de ejemplo, para saberlo utiliza la herramienta usando un dominio!
+
+```
+[+] api.prueba.com                           200  142.250.xx.xx     cloudflare              https [Cloudflare]
+[+] mail.prueba.com                          301  142.250.xx.xx     nginx                   https
+[+] admin.prueba.com                         200  142.250.xx.xx     Apache                  http
+...
+[✓] Escaneo finalizado
+    Subdominios vivos     : 12
+    Tiempo total          : 8.43 segundos
+    Velocidad aproximada  : 28.5 checks/s
+[+] Resultados guardados en → vivos.txt
+```
+## Captura
+
+<img width="789" height="651" alt="image" src="https://github.com/user-attachments/assets/21d4debd-0acb-46a8-bb0b-540cd662a77d" />
+
+## Notas
+
+- El script prioriza HTTPS y hace fallback a HTTP si es necesario.
+- Solo muestra los subdominios que responden (vivos).
+- Los resultados se guardan automáticamente en `vivos.txt`.
+
+---
+
+<div align="center">
+
+**Creado para mejorar la versión anterior.**
+
+## Contacto
+
+**Discord:** `kid.kidd`
+</div>
