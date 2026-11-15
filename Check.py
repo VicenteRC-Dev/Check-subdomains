@@ -20,7 +20,7 @@ init(autoreset=True)
 # ============================================================
 THREADS = 40
 TIMEOUT = 6.0
-USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.0 Safari/605.1.15"
 OUTPUT_FILE = "vivos.txt"
 
 # Wordlist de calidad (se usa si sub.txt no existe o está vacío)
